@@ -1,0 +1,431 @@
+<%# SengClaw 大胜龙虾 官网首页 %>
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur border-b border-border">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-lg font-bold" style="color: hsl(0 0% 100%)">🦐</div>
+      <span class="text-xl font-bold text-primary">大胜龙虾</span>
+      <span class="text-xs text-muted font-medium hidden sm:block">SengClaw</span>
+    </div>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#features" class="text-sm font-medium text-secondary hover:text-primary transition-colors">功能特性</a>
+      <a href="#how-it-works" class="text-sm font-medium text-secondary hover:text-primary transition-colors">工作原理</a>
+      <a href="#pricing" class="text-sm font-medium text-secondary hover:text-primary transition-colors">定价方案</a>
+      <a href="#about" class="text-sm font-medium text-secondary hover:text-primary transition-colors">关于我们</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="https://sengclaw.com" class="btn-ghost btn-sm hidden md:inline-flex">登录</a>
+      <a href="#contact" class="btn-primary btn-sm">免费体验</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="pt-32 pb-24 px-6 relative overflow-hidden">
+  <div class="absolute inset-0 -z-10" style="background: radial-gradient(ellipse 80% 60% at 50% -10%, hsl(4 86% 55% / 0.12), transparent 70%)"></div>
+  <div class="max-w-5xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface-elevated text-sm text-secondary mb-8">
+      <%= lucide_icon "zap", class: "w-4 h-4 text-primary" %>
+      <span>基于 OpenClacky 深度定制 · 专为中国开发者打造</span>
+    </div>
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+      <span class="text-primary">大胜龙虾</span>
+      <br>
+      <span class="text-foreground">属于你的数字 CTO</span>
+    </h1>
+    <p class="text-xl text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
+      一个懂业务、能写代码、24小时在线的 AI 技术合伙人。<br>
+      让你专注想法，让 AI 搞定技术。
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#contact" class="btn-primary btn-lg">
+        <%= lucide_icon "rocket", class: "w-5 h-5" %>
+        立即体验
+      </a>
+      <a href="#how-it-works" class="btn-outline btn-lg">
+        <%= lucide_icon "play-circle", class: "w-5 h-5" %>
+        了解工作原理
+      </a>
+    </div>
+    <p class="text-sm text-muted mt-6">已有 <strong class="text-foreground">200+</strong> 创业者和开发者在使用</p>
+  </div>
+
+  <!-- Hero Visual -->
+  <div class="max-w-4xl mx-auto mt-16">
+    <div class="card-elevated rounded-2xl overflow-hidden shadow-xl border border-border">
+      <div class="flex items-center gap-2 px-4 py-3 border-b border-border bg-surface-elevated">
+        <div class="w-3 h-3 rounded-full bg-danger"></div>
+        <div class="w-3 h-3 rounded-full bg-warning"></div>
+        <div class="w-3 h-3 rounded-full bg-success"></div>
+        <span class="text-xs text-muted ml-2 font-mono">sengclaw ~ AI 工作台</span>
+      </div>
+      <div class="p-6 font-mono text-sm bg-surface space-y-3">
+        <div class="flex gap-3">
+          <span class="text-primary font-bold shrink-0">你:</span>
+          <span class="text-foreground">帮我做一个客户管理系统，要能记录跟进记录</span>
+        </div>
+        <div class="flex gap-3">
+          <span class="text-secondary font-bold shrink-0">🦐 CTO:</span>
+          <span class="text-secondary">好的！我来规划技术方案... 正在创建 Customer 和 FollowUp 模型，设计界面...</span>
+        </div>
+        <div class="flex gap-3 pl-12">
+          <span class="text-success text-xs">✓ 创建数据库表结构</span>
+        </div>
+        <div class="flex gap-3 pl-12">
+          <span class="text-success text-xs">✓ 生成 CRUD 接口和界面</span>
+        </div>
+        <div class="flex gap-3 pl-12">
+          <span class="text-success text-xs">✓ 配置权限和搜索功能</span>
+        </div>
+        <div class="flex gap-3">
+          <span class="text-secondary font-bold shrink-0">🦐 CTO:</span>
+          <span class="text-secondary">完成！系统已跑通，访问 localhost:3000/customers 查看 ✅</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section class="py-12 border-y border-border bg-surface-elevated">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <p class="text-sm text-muted mb-8 uppercase tracking-widest">被以下类型的创业者信赖</p>
+    <div class="flex flex-wrap justify-center gap-8 text-secondary">
+      <span class="flex items-center gap-2 text-sm font-medium">
+        <%= lucide_icon "shopping-bag", class: "w-4 h-4 text-primary" %> 电商独立站主
+      </span>
+      <span class="flex items-center gap-2 text-sm font-medium">
+        <%= lucide_icon "briefcase", class: "w-4 h-4 text-primary" %> SaaS 产品创始人
+      </span>
+      <span class="flex items-center gap-2 text-sm font-medium">
+        <%= lucide_icon "users", class: "w-4 h-4 text-primary" %> 团队技术负责人
+      </span>
+      <span class="flex items-center gap-2 text-sm font-medium">
+        <%= lucide_icon "star", class: "w-4 h-4 text-primary" %> 个人开发者
+      </span>
+      <span class="flex items-center gap-2 text-sm font-medium">
+        <%= lucide_icon "building", class: "w-4 h-4 text-primary" %> 传统企业数字化
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-foreground mb-4">你的数字 CTO 能做什么？</h2>
+      <p class="text-lg text-secondary max-w-2xl mx-auto">不只是写代码——而是像一个真正的技术合伙人一样思考和工作</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Feature 1 -->
+      <div class="card p-6 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+          <%= lucide_icon "code-2", class: "w-6 h-6 text-primary" %>
+        </div>
+        <h3 class="text-lg font-semibold text-foreground mb-2">全栈开发能力</h3>
+        <p class="text-secondary text-sm leading-relaxed">从数据库设计到前端界面，从 API 到部署，全程自主完成。Rails、React、Python 都不在话下。</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="card p-6 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+          <%= lucide_icon "message-circle", class: "w-6 h-6 text-secondary" %>
+        </div>
+        <h3 class="text-lg font-semibold text-foreground mb-2">飞书 / 企微直接对话</h3>
+        <p class="text-secondary text-sm leading-relaxed">不用装任何软件，直接在飞书或企业微信给 AI 发消息，它就能帮你改代码、查问题。</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="card p-6 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center mb-4">
+          <%= lucide_icon "brain", class: "w-6 h-6 text-success" %>
+        </div>
+        <h3 class="text-lg font-semibold text-foreground mb-2">长期记忆 · 懂你项目</h3>
+        <p class="text-secondary text-sm leading-relaxed">记住你的技术选型、业务背景、代码风格。下次对话不用重复解释，直接干活。</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="card p-6 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center mb-4">
+          <%= lucide_icon "clock", class: "w-6 h-6 text-info" %>
+        </div>
+        <h3 class="text-lg font-semibold text-foreground mb-2">定时自动执行任务</h3>
+        <p class="text-secondary text-sm leading-relaxed">设定定时任务，让 AI 每天自动跑数据分析、生成报告、清理垃圾数据，你睡觉它干活。</p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="card p-6 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center mb-4">
+          <%= lucide_icon "shield-check", class: "w-6 h-6 text-warning" %>
+        </div>
+        <h3 class="text-lg font-semibold text-foreground mb-2">本地部署 · 数据不出境</h3>
+        <p class="text-secondary text-sm leading-relaxed">代码和数据完全跑在你本地，不上传任何服务器。企业级数据安全，放心用。</p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="card p-6 hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-xl bg-danger/10 flex items-center justify-center mb-4">
+          <%= lucide_icon "layers", class: "w-6 h-6 text-danger" %>
+        </div>
+        <h3 class="text-lg font-semibold text-foreground mb-2">技能扩展 · 无限可能</h3>
+        <p class="text-secondary text-sm leading-relaxed">通过自定义 Skill，给 AI 安装新能力。一键部署、自动测试、生成文档……随你定制。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section id="how-it-works" class="py-24 px-6 bg-surface-elevated">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-foreground mb-4">三步开始，像用微信一样简单</h2>
+      <p class="text-secondary text-lg">不需要懂技术，不需要配置服务器</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-4 text-2xl font-black shadow-md" style="color: hsl(0 0% 100%)">1</div>
+        <h3 class="text-lg font-semibold text-foreground mb-2">安装大胜龙虾</h3>
+        <p class="text-secondary text-sm">一行命令安装到你电脑，2分钟完成配置。支持 Mac / Windows / Linux。</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-4 text-2xl font-black shadow-md" style="color: hsl(0 0% 100%)">2</div>
+        <h3 class="text-lg font-semibold text-foreground mb-2">连接你的 IM / 浏览器</h3>
+        <p class="text-secondary text-sm">绑定飞书或企微，或直接用浏览器访问 AI 工作台，随时随地开聊。</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-4 text-2xl font-black shadow-md" style="color: hsl(0 0% 100%)">3</div>
+        <h3 class="text-lg font-semibold text-foreground mb-2">说需求，等交付</h3>
+        <p class="text-secondary text-sm">用中文描述你想做什么，AI 自主规划、写代码、测试、部署，你只负责验收。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-foreground mb-4">他们都在用大胜龙虾</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card p-6">
+        <div class="flex gap-1 mb-4">
+          <% 5.times do %><%= lucide_icon "star", class: "w-4 h-4 text-secondary fill-current" %><% end %>
+        </div>
+        <p class="text-secondary text-sm leading-relaxed mb-4">"以前招一个后端要 2 万月薪，现在大胜龙虾帮我把 MVP 全做出来了，成本降了 90%。"</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover" alt="用户">
+          <div>
+            <p class="text-sm font-semibold text-foreground">王总</p>
+            <p class="text-xs text-muted">电商 SaaS 创始人</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <div class="flex gap-1 mb-4">
+          <% 5.times do %><%= lucide_icon "star", class: "w-4 h-4 text-secondary fill-current" %><% end %>
+        </div>
+        <p class="text-secondary text-sm leading-relaxed mb-4">"我非技术出身，跟它说中文需求，它自己搞定了整个后台管理系统。太神了。"</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover" alt="用户">
+          <div>
+            <p class="text-sm font-semibold text-foreground">李女士</p>
+            <p class="text-xs text-muted">教育机构运营总监</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <div class="flex gap-1 mb-4">
+          <% 5.times do %><%= lucide_icon "star", class: "w-4 h-4 text-secondary fill-current" %><% end %>
+        </div>
+        <p class="text-secondary text-sm leading-relaxed mb-4">"连接飞书之后，我直接在工作群里让 AI 帮我查 bug 改代码，同事都以为我雇了个新程序员。"</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover" alt="用户">
+          <div>
+            <p class="text-sm font-semibold text-foreground">张工</p>
+            <p class="text-xs text-muted">独立开发者</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="py-24 px-6 bg-surface-elevated">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-foreground mb-4">简单透明的定价</h2>
+      <p class="text-secondary text-lg">不按坐席收费，不限项目数量，买断更划算</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Starter -->
+      <div class="card p-8">
+        <h3 class="text-lg font-bold text-foreground mb-1">体验版</h3>
+        <p class="text-sm text-muted mb-4">适合个人探索</p>
+        <div class="text-4xl font-extrabold text-foreground mb-6">
+          免费
+        </div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            基础 AI 对话能力
+          </li>
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            Web 工作台
+          </li>
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            1 个项目
+          </li>
+        </ul>
+        <a href="#contact" class="btn-outline w-full text-center">开始体验</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="card p-8 border-2 border-primary relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span class="badge-primary text-xs px-3 py-1">最受欢迎</span>
+        </div>
+        <h3 class="text-lg font-bold text-foreground mb-1">专业版</h3>
+        <p class="text-sm text-muted mb-4">适合独立开发者 / 小团队</p>
+        <div class="text-4xl font-extrabold text-foreground mb-1">
+          ¥599<span class="text-lg font-normal text-muted">/月</span>
+        </div>
+        <p class="text-xs text-muted mb-6">或 ¥4,999/年（省 ¥2,189）</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            无限项目
+          </li>
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            飞书 / 企微接入
+          </li>
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            长期记忆 + 定时任务
+          </li>
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            自定义技能扩展
+          </li>
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            优先客服支持
+          </li>
+        </ul>
+        <a href="#contact" class="btn-primary w-full text-center">立即订阅</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="card p-8">
+        <h3 class="text-lg font-bold text-foreground mb-1">企业版</h3>
+        <p class="text-sm text-muted mb-4">适合中大型团队 / 白标二开</p>
+        <div class="text-4xl font-extrabold text-foreground mb-6">
+          联系我们
+        </div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            专属品牌定制
+          </li>
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            私有化部署
+          </li>
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            多人协作工作台
+          </li>
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            API 集成 + 源码授权
+          </li>
+          <li class="flex items-center gap-2 text-sm text-secondary">
+            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
+            专属技术顾问
+          </li>
+        </ul>
+        <a href="#contact" class="btn-outline w-full text-center">联系洽谈</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA / Contact -->
+<section id="contact" class="py-24 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 text-4xl">🦐</div>
+    <h2 class="text-4xl font-bold text-foreground mb-4">准备好迎接你的数字 CTO？</h2>
+    <p class="text-lg text-secondary mb-10">加入我们，让 AI 成为你最靠谱的技术合伙人。</p>
+    <div class="card p-8 text-left max-w-md mx-auto">
+      <h3 class="text-lg font-semibold text-foreground mb-4 text-center">申请免费体验</h3>
+      <div class="space-y-4">
+        <div>
+          <label class="form-label">你的名字</label>
+          <input type="text" class="form-input" placeholder="张总">
+        </div>
+        <div>
+          <label class="form-label">联系方式（微信 / 手机）</label>
+          <input type="text" class="form-input" placeholder="微信号或手机号">
+        </div>
+        <div>
+          <label class="form-label">你想用 AI 解决什么问题？</label>
+          <textarea class="form-textarea" rows="3" placeholder="简单描述一下你的业务需求..."></textarea>
+        </div>
+        <button class="btn-primary w-full">
+          <%= lucide_icon "send", class: "w-4 h-4" %>
+          提交申请
+        </button>
+      </div>
+      <p class="text-xs text-muted text-center mt-4">我们会在 24 小时内联系你 🦐</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-border py-12 px-6 bg-surface-elevated">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-2xl">🦐</span>
+          <span class="text-lg font-bold text-foreground">大胜龙虾 · SengClaw</span>
+        </div>
+        <p class="text-sm text-muted leading-relaxed max-w-xs">属于你的数字 CTO。基于 OpenClacky 深度定制，专为中国创业者打造的 AI 技术合伙人。</p>
+        <p class="text-xs text-muted mt-4">© 2026 SengClaw · sengclaw.com</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-foreground mb-3">产品</h4>
+        <ul class="space-y-2 text-sm text-muted">
+          <li><a href="#features" class="hover:text-foreground transition-colors">功能特性</a></li>
+          <li><a href="#how-it-works" class="hover:text-foreground transition-colors">工作原理</a></li>
+          <li><a href="#pricing" class="hover:text-foreground transition-colors">定价方案</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-foreground mb-3">联系我们</h4>
+        <ul class="space-y-2 text-sm text-muted">
+          <li class="flex items-center gap-1">
+            <%= lucide_icon "globe", class: "w-3 h-3" %>
+            sengclaw.com
+          </li>
+          <li class="flex items-center gap-1">
+            <%= lucide_icon "mail", class: "w-3 h-3" %>
+            hi@sengclaw.com
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

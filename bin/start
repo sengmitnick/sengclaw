@@ -1,0 +1,55 @@
+#!/bin/bash
+# Start sengclaw Rails server + ngrok, fully detached from terminal
+set -e
+
+SENGCLAW_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+RUBY_BIN="/Users/zhangrunsheng/.rbenv/versions/3.3.5/bin"
+PORT=3002
+NGROK_URL="sengclaw.ngrok.dev"
+
+export PATH="$RUBY_BIN:$PATH"
+cd "$SENGCLAW_DIR"
+
+echo "==> Stopping existing processes..."
+pkill -f "rails server.*$PORT" 2>/dev/null || true
+pkill -9 -f "ngrok http.*$NGROK_URL" 2>/dev/null || true
+sleep 1
+
+rm -f tmp/pids/server.pid
+
+echo "==> Starting Rails on port $PORT..."
+nohup bundle exec rails server -p $PORT </dev/null > tmp/rails.log 2>&1 &
+RAILS_PID=$!
+echo "    Rails PID=$RAILS_PID"
+
+echo "==> Waiting for Rails to boot..."
+for i in $(seq 1 15); do
+  sleep 1
+  if curl -s http://localhost:$PORT/api/v1/health > /dev/null 2>&1; then
+    echo "    Rails is up ✓"
+    break
+  fi
+  if [ $i -eq 15 ]; then
+    echo "    Rails failed to start, check tmp/rails.log"
+    exit 1
+  fi
+done
+
+echo "==> Starting ngrok -> $NGROK_URL..."
+nohup ngrok http --url=$NGROK_URL $PORT --log=stdout </dev/null > tmp/ngrok-3002.log 2>&1 &
+NGROK_PID=$!
+echo "    ngrok PID=$NGROK_PID"
+
+sleep 4
+echo ""
+echo "==> Verifying ngrok tunnel..."
+RESULT=$(curl -s https://$NGROK_URL/api/v1/health -H "ngrok-skip-browser-warning: 1" 2>/dev/null)
+if echo "$RESULT" | grep -q "ok"; then
+  echo "    ngrok tunnel OK ✓"
+else
+  echo "    ngrok not ready yet (may need a few more seconds)"
+fi
+
+echo ""
+echo "Done! Rails: http://localhost:$PORT  |  Public: https://$NGROK_URL"
+echo "Logs: tail -f $SENGCLAW_DIR/tmp/rails.log"

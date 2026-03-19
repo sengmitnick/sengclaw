@@ -8,12 +8,29 @@ class AdminConstraint
 end
 
 Rails.application.routes.draw do
-  # write your business logic routes here
+  # Static pages
+  scope '/pages', as: :pages do
+    get 'features', to: 'pages#features', as: :features
+    get 'about', to: 'pages#about', as: :about
+    get 'contact', to: 'pages#contact', as: :contact
+  end
+
+  # Linear OAuth flow (browser-based, initiated by OpenClacky skill)
+  namespace :oauth do
+    get  'linear/authorize', to: 'linear#authorize', as: :linear_authorize
+    get  'linear/callback',  to: 'linear#callback',  as: :linear_callback
+  end
+
+  # Linear webhook receiver
+  namespace :webhooks do
+    post 'linear', to: 'linear#receive'
+  end
 
   # API routes
   namespace :api do
     namespace :v1 do
       get 'health', to: 'health#index'
+      resources :project_mappings, only: [:index, :create, :destroy]
     end
   end
 

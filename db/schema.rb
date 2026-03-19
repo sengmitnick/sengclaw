@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_09_24_075041) do
+ActiveRecord::Schema[7.2].define(version: 2026_03_18_000003) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +67,22 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_24_075041) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_administrators_on_name", unique: true
     t.index ["role"], name: "index_administrators_on_role"
+  end
+
+  create_table "agent_tasks", force: :cascade do |t|
+    t.string "agent_session_id", null: false
+    t.string "issue_id", null: false
+    t.string "workspace_id", null: false
+    t.string "install_token", null: false
+    t.string "status", default: "pending", null: false
+    t.text "webhook_payload"
+    t.text "error_message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agent_session_id"], name: "index_agent_tasks_on_agent_session_id", unique: true
+    t.index ["install_token"], name: "index_agent_tasks_on_install_token"
+    t.index ["status"], name: "index_agent_tasks_on_status"
+    t.index ["workspace_id"], name: "index_agent_tasks_on_workspace_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -168,6 +184,31 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_24_075041) do
     t.index ["priority", "scheduled_at"], name: "index_good_jobs_on_priority_scheduled_at_unfinished_unlocked", where: "((finished_at IS NULL) AND (locked_by_id IS NULL))"
     t.index ["queue_name", "scheduled_at"], name: "index_good_jobs_on_queue_name_and_scheduled_at", where: "(finished_at IS NULL)"
     t.index ["scheduled_at"], name: "index_good_jobs_on_scheduled_at", where: "(finished_at IS NULL)"
+  end
+
+  create_table "linear_installations", force: :cascade do |t|
+    t.string "install_token", null: false
+    t.string "workspace_id", null: false
+    t.string "linear_actor_id"
+    t.text "access_token", null: false
+    t.text "refresh_token"
+    t.datetime "expires_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["install_token"], name: "index_linear_installations_on_install_token", unique: true
+    t.index ["workspace_id"], name: "index_linear_installations_on_workspace_id"
+  end
+
+  create_table "project_mappings", force: :cascade do |t|
+    t.string "install_token", null: false
+    t.string "linear_project_id"
+    t.string "linear_team_id", null: false
+    t.string "local_path", null: false
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["install_token", "linear_team_id"], name: "index_project_mappings_on_install_token_and_linear_team_id", unique: true
+    t.index ["install_token"], name: "index_project_mappings_on_install_token"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

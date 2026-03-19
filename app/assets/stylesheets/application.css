@@ -40,26 +40,27 @@
    * Use semantic variables only for maintainability and theme consistency.
    */
   :root {
-    --color-primary: 217 91% 60%;
-    --color-primary-light: 213 93% 68%;
-    --color-primary-dark: 221 83% 53%;
+    /* SengClaw Brand Colors - 大胜龙虾: 龙虾红 + 深海黑 + 金色 */
+    --color-primary: 4 86% 55%;          /* 龙虾红 - 热情、力量 */
+    --color-primary-light: 6 90% 68%;    /* 浅龙虾红 */
+    --color-primary-dark: 2 80% 44%;     /* 深龙虾红 */
 
-    --color-secondary: 262 83% 58%;
-    --color-secondary-light: 270 91% 85%;
-    --color-secondary-dark: 263 70% 50%;
+    --color-secondary: 40 95% 50%;       /* 金色点缀 - 财富、尊贵 */
+    --color-secondary-light: 42 100% 72%;
+    --color-secondary-dark: 36 90% 38%;
 
     /* Text colors - high contrast for readability */
-    --color-text-primary: 0 0% 15%;    /* Main headings, important text */
-    --color-text-secondary: 0 0% 35%;  /* Body text, descriptions */
-    --color-text-muted: 0 0% 64%;      /* Captions, helper text */
+    --color-text-primary: 220 20% 10%;   /* 深海黑 - 主标题 */
+    --color-text-secondary: 220 12% 30%; /* 副标题 */
+    --color-text-muted: 220 8% 58%;      /* 辅助文字 */
 
     /* Surface colors - for backgrounds and borders */
-    --color-surface: 0 0% 100%;        /* Main background (white) */
-    --color-surface-elevated: 0 0% 92%; /* Cards, elevated surfaces */
-    --color-border: 0 0% 90%;          /* Borders, dividers */
+    --color-surface: 0 0% 100%;          /* 纯白背景 */
+    --color-surface-elevated: 220 20% 97%; /* 卡片背景 - 略带科技感 */
+    --color-border: 220 15% 90%;         /* 边框 */
 
-    /*  Neutral color - use only in special cases, avoid for text */
-    --color-neutral: 0 0% 64%;
+    /* Neutral color */
+    --color-neutral: 220 8% 60%;
 
     --color-success: 142 76% 36%;
     --color-warning: 38 92% 50%;
@@ -93,14 +94,14 @@
    * Follows WCAG AA standards with minimum 4.5:1 text contrast ratio
    */
   .dark {
-    /* Brand colors optimization for dark mode - increased brightness */
-    --color-primary: 220 100% 70%;     /* Brighter blue for dark backgrounds */
-    --color-primary-light: 218 100% 80%; /* Light variant */
-    --color-primary-dark: 222 90% 60%; /* Dark variant */
+    /* SengClaw dark mode - 龙虾红 brightened for dark backgrounds */
+    --color-primary: 6 90% 65%;        /* 明亮龙虾红 */
+    --color-primary-light: 8 95% 75%;  /* 浅龙虾红 */
+    --color-primary-dark: 4 82% 55%;   /* 深龙虾红 */
 
-    --color-secondary: 266 85% 70%;    /* Brighter purple */
-    --color-secondary-light: 270 90% 85%;
-    --color-secondary-dark: 264 75% 60%;
+    --color-secondary: 42 95% 60%;     /* 金色 brighter for dark mode */
+    --color-secondary-light: 44 100% 75%;
+    --color-secondary-dark: 38 88% 48%;
 
     /* Text colors - high contrast for readability */
     --color-text-primary: 0 0% 95%;    /* Near white, optimal contrast */

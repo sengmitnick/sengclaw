@@ -1,0 +1,39 @@
+<div class="max-w-2xl mx-auto px-6 py-24">
+  <div class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-foreground mb-4">联系我们</h1>
+    <p class="text-lg text-secondary">我们会在 24 小时内回复你 🦐</p>
+  </div>
+  <div class="card p-8">
+    <div class="space-y-4">
+      <div>
+        <label class="form-label">你的名字</label>
+        <input type="text" class="form-input" placeholder="张总">
+      </div>
+      <div>
+        <label class="form-label">联系方式（微信 / 手机 / 邮件）</label>
+        <input type="text" class="form-input" placeholder="你的联系方式">
+      </div>
+      <div>
+        <label class="form-label">想了解什么？</label>
+        <textarea class="form-textarea" rows="4" placeholder="请描述你的需求或问题..."></textarea>
+      </div>
+      <button class="btn-primary w-full">
+        <%= lucide_icon "send", class: "w-4 h-4" %>
+        提交
+      </button>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 gap-4 mt-6">
+    <div class="card p-4 text-center">
+      <%= lucide_icon "globe", class: "w-5 h-5 text-primary mx-auto mb-2" %>
+      <p class="text-sm font-medium text-foreground">sengclaw.com</p>
+    </div>
+    <div class="card p-4 text-center">
+      <%= lucide_icon "mail", class: "w-5 h-5 text-primary mx-auto mb-2" %>
+      <p class="text-sm font-medium text-foreground">hi@sengclaw.com</p>
+    </div>
+  </div>
+  <div class="text-center mt-8">
+    <a href="/" class="btn-outline">← 返回首页</a>
+  </div>
+</div>
