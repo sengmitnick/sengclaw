@@ -9,7 +9,8 @@ class Webhooks::LinearController < ActionController::API
     end
 
     payload = JSON.parse(raw_body)
-    event_type = request.headers["Linear-Event"]
+    # Prefer Linear-Event header; fall back to payload["type"] for AgentSessionEvent etc.
+    event_type = request.headers["Linear-Event"].presence || payload["type"]
 
     # Enqueue async processing — do NOT block here
     LinearWebhookJob.perform_later(payload: payload, event_type: event_type)

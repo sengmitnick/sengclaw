@@ -12,6 +12,25 @@ class SengclawChannel < ApplicationCable::Channel
     Rails.logger.info "SengclawChannel: unsubscribed #{install_token}"
   end
 
+  # OpenClacky → sengclaw: post a thought/action/response activity back to Linear
+  # data: { agent_session_id:, type: "thought"|"action"|"response", body: "..." }
+  def post_activity(data)
+    task = AgentTask.find_by(agent_session_id: data["agent_session_id"])
+    return unless task
+
+    installation = LinearInstallation.find_by(install_token: task.install_token)
+    return unless installation&.access_token
+
+    LinearActivityService.new(
+      access_token:     installation.access_token,
+      agent_session_id: data["agent_session_id"],
+      type:             data["type"],
+      body:             data["body"]
+    ).call
+  rescue => e
+    Rails.logger.error "SengclawChannel#post_activity failed: #{e.message}"
+  end
+
   # OpenClacky → sengclaw: task completed
   def task_completed(data)
     task = AgentTask.find_by(agent_session_id: data["agent_session_id"])
@@ -19,6 +38,11 @@ class SengclawChannel < ApplicationCable::Channel
 
     task.mark_done!
     Rails.logger.info "SengclawChannel: task completed #{data['agent_session_id']}"
+
+    # Post final response activity to Linear if body provided
+    if data["response"].present?
+      post_activity(data.merge("type" => "response", "body" => data["response"]))
+    end
   end
 
   # OpenClacky → sengclaw: task failed
@@ -27,6 +51,17 @@ class SengclawChannel < ApplicationCable::Channel
     return unless task
 
     task.mark_failed!(data["error"])
+
+    # Notify Linear about the failure
+    installation = LinearInstallation.find_by(install_token: task.install_token)
+    if installation&.access_token
+      LinearActivityService.new(
+        access_token:     installation.access_token,
+        agent_session_id: data["agent_session_id"],
+        type:             "response",
+        body:             "❌ Task failed: #{data['error']}"
+      ).call rescue nil
+    end
   end
 
   # OpenClacky → sengclaw: task started running
@@ -37,15 +72,17 @@ class SengclawChannel < ApplicationCable::Channel
 
   # Class method: dispatch a new task to a connected OpenClacky instance
   # Returns true if the instance is connected, false otherwise
-  def self.dispatch_task(install_token:, task:, payload:)
+  def self.dispatch_task(install_token:, task:, payload:, local_path: nil)
     channel = channel_key_for(install_token)
+    # AgentSessionEvent: agentSession and promptContext are at top level
     ActionCable.server.broadcast(channel, {
       type: "new_task",
       agent_session_id: task.agent_session_id,
       issue_id: task.issue_id,
       workspace_id: task.workspace_id,
-      prompt_context: payload.dig("data", "promptContext"),
-      agent_session: payload.dig("data", "agentSession")
+      local_path: local_path,
+      prompt_context: payload["promptContext"] || payload.dig("data", "promptContext"),
+      agent_session: payload["agentSession"] || payload.dig("data", "agentSession")
     })
     true
   rescue => e
@@ -58,8 +95,8 @@ class SengclawChannel < ApplicationCable::Channel
     ActionCable.server.broadcast(channel, {
       type: "session_updated",
       agent_session_id: agent_session_id,
-      prompt_context: payload.dig("data", "promptContext"),
-      agent_session: payload.dig("data", "agentSession")
+      prompt_context: payload["promptContext"] || payload.dig("data", "promptContext"),
+      agent_session: payload["agentSession"] || payload.dig("data", "agentSession")
     })
   end
 
