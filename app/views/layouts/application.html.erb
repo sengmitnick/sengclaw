@@ -26,8 +26,7 @@
     <!-- Load error handler early to catch all errors -->
     <%= javascript_include_tag 'error_handler' if Rails.env.development? %>
     <%= javascript_include_tag 'application', type: "module" %>
-    <!-- Generate new favicon at `images/app-favicon.svg` at the first time, remove this line after generated  -->
-    <%= favicon_link_tag asset_path("app-favicon.svg") unless Rails.env.test? %>
+    <%= favicon_link_tag asset_path("sengclaw-logo.png") unless Rails.env.test? %>
   </head>
   <body class="flex flex-col min-h-screen text-foreground <%= body_class %>">
     <main class="flex-1 flex flex-col bg-surface">
