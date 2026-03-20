@@ -1,39 +1,40 @@
 <div class="max-w-2xl mx-auto px-6 py-24">
   <div class="text-center mb-12">
+    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+      <%= image_tag "sengclaw-logo.png", class: "w-10 h-10 object-contain", alt: "大胜龙虾" %>
+    </div>
     <h1 class="text-4xl font-bold text-foreground mb-4">联系我们</h1>
-    <p class="text-lg text-secondary">我们会在 24 小时内回复你 🦐</p>
+    <p class="text-lg text-secondary">扫码加微信，直接聊需求</p>
+    <p class="text-sm text-muted mt-2">无论你是一人公司还是传统企业，先聊聊再说</p>
   </div>
-  <div class="card p-8">
-    <div class="space-y-4">
-      <div>
-        <label class="form-label">你的名字</label>
-        <input type="text" class="form-input" placeholder="张总">
-      </div>
-      <div>
-        <label class="form-label">联系方式（微信 / 手机 / 邮件）</label>
-        <input type="text" class="form-input" placeholder="你的联系方式">
-      </div>
-      <div>
-        <label class="form-label">想了解什么？</label>
-        <textarea class="form-textarea" rows="4" placeholder="请描述你的需求或问题..."></textarea>
-      </div>
-      <button class="btn-primary w-full">
-        <%= lucide_icon "send", class: "w-4 h-4" %>
-        提交
-      </button>
+
+  <!-- QR Code -->
+  <div class="flex justify-center mb-8">
+    <div class="rounded-xl overflow-hidden">
+      <%= image_tag "contact-qrcode.png", class: "w-64 h-auto block", alt: "微信扫码联系" %>
     </div>
   </div>
-  <div class="grid grid-cols-2 gap-4 mt-6">
+
+  <!-- Info Cards -->
+  <div class="grid grid-cols-3 gap-4 mb-8">
     <div class="card p-4 text-center">
-      <%= lucide_icon "globe", class: "w-5 h-5 text-primary mx-auto mb-2" %>
-      <p class="text-sm font-medium text-foreground">sengclaw.com</p>
+      <%= lucide_icon "message-circle", class: "w-5 h-5 text-primary mx-auto mb-2" %>
+      <p class="text-sm font-medium text-foreground">免费咨询</p>
+      <p class="text-xs text-muted mt-1">先聊需求再说方案</p>
     </div>
     <div class="card p-4 text-center">
-      <%= lucide_icon "mail", class: "w-5 h-5 text-primary mx-auto mb-2" %>
-      <p class="text-sm font-medium text-foreground">hi@sengclaw.com</p>
+      <%= lucide_icon "clock", class: "w-5 h-5 text-primary mx-auto mb-2" %>
+      <p class="text-sm font-medium text-foreground">快速响应</p>
+      <p class="text-xs text-muted mt-1">工作时间内实时回复</p>
+    </div>
+    <div class="card p-4 text-center">
+      <%= lucide_icon "shield-check", class: "w-5 h-5 text-primary mx-auto mb-2" %>
+      <p class="text-sm font-medium text-foreground">无销售骚扰</p>
+      <p class="text-xs text-muted mt-1">不合适不强推</p>
     </div>
   </div>
-  <div class="text-center mt-8">
+
+  <div class="text-center">
     <a href="/" class="btn-outline">← 返回首页</a>
   </div>
 </div>
