@@ -15,7 +15,6 @@
       <a href="#about" class="text-sm font-medium text-secondary hover:text-primary transition-colors">关于我们</a>
     </div>
     <div class="flex items-center gap-3">
-      <a href="https://sengclaw.com" class="btn-ghost btn-sm hidden md:inline-flex">登录</a>
       <a href="#contact" class="btn-primary btn-sm">免费体验</a>
     </div>
   </div>
@@ -365,7 +364,7 @@
 <!-- CTA / Contact -->
 <section id="contact" class="py-24 px-6">
   <div class="max-w-3xl mx-auto text-center">
-    <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 text-4xl">🦐</div>
+    <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6"><%= image_tag "sengclaw-logo.png", class: "w-14 h-14 object-contain", alt: "大胜龙虾" %></div>
     <h2 class="text-4xl font-bold text-foreground mb-4">你的 AI 研发团队，随时待命</h2>
     <p class="text-lg text-secondary mb-10">随时在线，自主运转，像有一支研发团队在背后支撑你。</p>
     <div class="card p-8 text-left max-w-md mx-auto">
@@ -388,7 +387,7 @@
           提交申请
         </button>
       </div>
-      <p class="text-xs text-muted text-center mt-4">我们会在 24 小时内联系你 🦐</p>
+      <p class="text-xs text-muted text-center mt-4">我们会在 24 小时内联系你 <%= image_tag "sengclaw-logo.png", class: "w-4 h-4 object-contain inline-block align-middle", alt: "SengClaw" %></p>
     </div>
   </div>
 </section>
@@ -399,7 +398,7 @@
     <div class="grid md:grid-cols-4 gap-8 mb-8">
       <div class="md:col-span-2">
         <div class="flex items-center gap-2 mb-3">
-          <span class="text-2xl">🦐</span>
+          <%= image_tag "sengclaw-logo.png", class: "w-8 h-8 object-contain", alt: "大胜龙虾" %>
           <span class="text-lg font-bold text-foreground">大胜龙虾 · SengClaw</span>
         </div>
         <p class="text-sm text-muted leading-relaxed max-w-xs">面向 AI 的新一代软件基建平台。帮助个人、创业者和企业团队率先完成软件开发范式的转型，抢占 AI 时代的生态位。</p>
