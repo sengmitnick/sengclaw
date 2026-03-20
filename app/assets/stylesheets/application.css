@@ -40,14 +40,14 @@
    * Use semantic variables only for maintainability and theme consistency.
    */
   :root {
-    /* SengClaw Brand Colors - 大胜龙虾: 龙虾红 + 深海黑 + 金色 */
-    --color-primary: 4 86% 55%;          /* 龙虾红 - 热情、力量 */
-    --color-primary-light: 6 90% 68%;    /* 浅龙虾红 */
-    --color-primary-dark: 2 80% 44%;     /* 深龙虾红 */
+    /* SengClaw Brand Colors - 大胜龙虾: 科技蓝 + 深海黑 + 金色 */
+    --color-primary: 210 90% 45%;          /* 科技深蓝 - 专业、力量 */
+    --color-primary-light: 200 95% 58%;    /* 亮蓝 */
+    --color-primary-dark: 215 85% 34%;     /* 深蓝 */
 
-    --color-secondary: 40 95% 50%;       /* 金色点缀 - 财富、尊贵 */
-    --color-secondary-light: 42 100% 72%;
-    --color-secondary-dark: 36 90% 38%;
+    --color-secondary: 45 95% 55%;       /* 金色点缀 - 财富、尊贵 */
+    --color-secondary-light: 44 100% 72%;
+    --color-secondary-dark: 38 90% 40%;
 
     /* Text colors - high contrast for readability */
     --color-text-primary: 220 20% 10%;   /* 深海黑 - 主标题 */
@@ -94,14 +94,14 @@
    * Follows WCAG AA standards with minimum 4.5:1 text contrast ratio
    */
   .dark {
-    /* SengClaw dark mode - 龙虾红 brightened for dark backgrounds */
-    --color-primary: 6 90% 65%;        /* 明亮龙虾红 */
-    --color-primary-light: 8 95% 75%;  /* 浅龙虾红 */
-    --color-primary-dark: 4 82% 55%;   /* 深龙虾红 */
+    /* SengClaw dark mode - 科技蓝 brightened for dark backgrounds */
+    --color-primary: 205 95% 60%;        /* 明亮科技蓝 */
+    --color-primary-light: 200 100% 72%; /* 浅亮蓝 */
+    --color-primary-dark: 210 88% 48%;   /* 深蓝 */
 
-    --color-secondary: 42 95% 60%;     /* 金色 brighter for dark mode */
+    --color-secondary: 45 100% 62%;     /* 金色 brighter for dark mode */
     --color-secondary-light: 44 100% 75%;
-    --color-secondary-dark: 38 88% 48%;
+    --color-secondary-dark: 40 90% 50%;
 
     /* Text colors - high contrast for readability */
     --color-text-primary: 0 0% 95%;    /* Near white, optimal contrast */
