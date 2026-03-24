@@ -30,7 +30,17 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'health', to: 'health#index'
+
+      # Status — poll linear_connected state (no LinearInstallation required)
+      get 'status', to: 'status#show'
+
       resources :project_mappings, only: [:index, :create, :destroy]
+
+      # Linear data proxy — used by workspace skill for project binding
+      scope :linear do
+        get  'teams_and_projects', to: 'linear#teams_and_projects'
+        post 'projects',           to: 'linear#create_project'
+      end
     end
   end
 
