@@ -22,33 +22,37 @@
 </nav>
 
 <!-- ===== HERO ===== -->
-<section class="relative pt-40 pb-28 px-6" style="background-image: linear-gradient(rgba(245,158,11,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,0.07) 1px, transparent 1px); background-size: 48px 48px;">
+<section class="relative flex flex-col px-6" style="min-height: 100vh; background-image: linear-gradient(rgba(245,158,11,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,0.07) 1px, transparent 1px); background-size: 48px 48px;">
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(245,158,11,0.06) 0%, transparent 70%);"></div>
-  <div class="max-w-4xl mx-auto text-center relative">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-xs font-mono" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25); color: #F59E0B;">
-      <%= lucide_icon "zap", class: "w-3 h-3" %>
-      AI Skill 工具 · 独立开发者出品
-    </div>
-    <h1 class="font-extrabold leading-tight mb-6" style="font-size: clamp(2.8rem, 6vw, 4.2rem); color: #f5f5f5;">
-      让每一位创作者拥有<br><span style="color: #F59E0B;">7×24 AI 助手</span>
-    </h1>
-    <p class="text-lg max-w-xl mx-auto mb-12 leading-relaxed" style="color: rgba(255,255,255,0.5);">
-      精选真实业务场景打磨的 AI Skill，开箱即用。<br>也教你怎么做——未来一起共建 Skill 生态。
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#contact" class="inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 text-sm transition-all" style="background-color: #F59E0B; color: #0a0a0a;">
-        <%= lucide_icon "message-circle", class: "w-4 h-4" %>
-        加入交流群
-      </a>
-      <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 text-sm transition-all" style="border: 1px solid rgba(245,158,11,0.4); color: rgba(255,255,255,0.8);" onmouseover="this.style.borderColor='rgba(245,158,11,0.8)';this.style.color='#F59E0B'" onmouseout="this.style.borderColor='rgba(245,158,11,0.4)';this.style.color='rgba(255,255,255,0.8)'">
-        查看使用步骤
-      </a>
-    </div>
-    <div class="mt-16 flex justify-center">
-      <div class="flex flex-col items-center gap-2" style="opacity: 0.35;">
-        <span class="text-xs" style="color: rgba(255,255,255,0.5);">向下滚动</span>
-        <%= lucide_icon "chevron-down", class: "w-4 h-4 animate-bounce", style: "color: rgba(255,255,255,0.5)" %>
+  <!-- 垂直居中内容区，顶部留出 navbar 高度 -->
+  <div class="flex-1 flex items-center justify-center pt-16">
+    <div class="max-w-4xl mx-auto text-center relative w-full">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-xs font-mono" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25); color: #F59E0B;">
+        <%= lucide_icon "zap", class: "w-3 h-3" %>
+        AI Skill 工具 · 独立开发者出品
       </div>
+      <h1 class="font-extrabold leading-tight mb-6" style="font-size: clamp(2.8rem, 6vw, 4.2rem); color: #f5f5f5;">
+        让每一位创作者拥有<br><span style="color: #F59E0B;">7×24 AI 助手</span>
+      </h1>
+      <p class="text-lg max-w-xl mx-auto mb-12 leading-relaxed" style="color: rgba(255,255,255,0.5);">
+        精选真实业务场景打磨的 AI Skill，开箱即用。<br>也教你怎么做——未来一起共建 Skill 生态。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 text-sm transition-all" style="background-color: #F59E0B; color: #0a0a0a;">
+          <%= lucide_icon "message-circle", class: "w-4 h-4" %>
+          加入交流群
+        </a>
+        <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 text-sm transition-all" style="border: 1px solid rgba(245,158,11,0.4); color: rgba(255,255,255,0.8);" onmouseover="this.style.borderColor='rgba(245,158,11,0.8)';this.style.color='#F59E0B'" onmouseout="this.style.borderColor='rgba(245,158,11,0.4)';this.style.color='rgba(255,255,255,0.8)'">
+          查看使用步骤
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- 向下滚动提示固定在底部 -->
+  <div class="flex justify-center pb-8">
+    <div class="flex flex-col items-center gap-2" style="opacity: 0.35;">
+      <span class="text-xs" style="color: rgba(255,255,255,0.5);">向下滚动</span>
+      <%= lucide_icon "chevron-down", class: "w-4 h-4 animate-bounce", style: "color: rgba(255,255,255,0.5)" %>
     </div>
   </div>
 </section>
@@ -309,8 +313,8 @@
             sengclaw.com
           </li>
           <li class="flex items-center gap-2" style="color: rgba(255,255,255,0.35);">
-            <%= lucide_icon "mail", class: "w-3.5 h-3.5" %>
-            hi@sengclaw.com
+            <%= lucide_icon "message-circle", class: "w-3.5 h-3.5" %>
+            扫码加微信
           </li>
         </ul>
       </div>
