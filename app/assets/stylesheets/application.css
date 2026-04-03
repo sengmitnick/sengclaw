@@ -40,24 +40,24 @@
    * Use semantic variables only for maintainability and theme consistency.
    */
   :root {
-    /* SengClaw Brand Colors - 大胜龙虾: 科技蓝 + 深海黑 + 金色 */
-    --color-primary: 210 90% 45%;          /* 科技深蓝 - 专业、力量 */
-    --color-primary-light: 200 95% 58%;    /* 亮蓝 */
-    --color-primary-dark: 215 85% 34%;     /* 深蓝 */
+    /* SengClaw Brand Colors - 大胜龙虾: 琥珀黄 + 暖白 + 深棕 */
+    --color-primary: 38 92% 50%;           /* 琥珀黄 #F59E0B - 活力、温暖 */
+    --color-primary-light: 43 96% 62%;     /* 浅琥珀 */
+    --color-primary-dark: 32 88% 38%;      /* 深琥珀 */
 
-    --color-secondary: 45 95% 55%;       /* 金色点缀 - 财富、尊贵 */
-    --color-secondary-light: 44 100% 72%;
-    --color-secondary-dark: 38 90% 40%;
+    --color-secondary: 220 14% 20%;      /* 深炭色 - 对比色 */
+    --color-secondary-light: 220 10% 40%;
+    --color-secondary-dark: 220 18% 12%;
 
     /* Text colors - high contrast for readability */
-    --color-text-primary: 220 20% 10%;   /* 深海黑 - 主标题 */
+    --color-text-primary: 220 20% 10%;   /* 深炭黑 - 主标题 */
     --color-text-secondary: 220 12% 30%; /* 副标题 */
     --color-text-muted: 220 8% 58%;      /* 辅助文字 */
 
     /* Surface colors - for backgrounds and borders */
     --color-surface: 0 0% 100%;          /* 纯白背景 */
-    --color-surface-elevated: 220 20% 97%; /* 卡片背景 - 略带科技感 */
-    --color-border: 220 15% 90%;         /* 边框 */
+    --color-surface-elevated: 40 20% 97%; /* 卡片背景 - 略带暖调 */
+    --color-border: 38 15% 88%;          /* 边框 - 暖色调 */
 
     /* Neutral color */
     --color-neutral: 220 8% 60%;
@@ -94,14 +94,14 @@
    * Follows WCAG AA standards with minimum 4.5:1 text contrast ratio
    */
   .dark {
-    /* SengClaw dark mode - 科技蓝 brightened for dark backgrounds */
-    --color-primary: 205 95% 60%;        /* 明亮科技蓝 */
-    --color-primary-light: 200 100% 72%; /* 浅亮蓝 */
-    --color-primary-dark: 210 88% 48%;   /* 深蓝 */
+    /* SengClaw dark mode - 琥珀黄 brightened for dark backgrounds */
+    --color-primary: 38 95% 58%;         /* 明亮琥珀黄 */
+    --color-primary-light: 43 100% 70%;  /* 浅亮琥珀 */
+    --color-primary-dark: 32 90% 45%;    /* 深琥珀 */
 
-    --color-secondary: 45 100% 62%;     /* 金色 brighter for dark mode */
-    --color-secondary-light: 44 100% 75%;
-    --color-secondary-dark: 40 90% 50%;
+    --color-secondary: 220 12% 70%;     /* 亮炭色 for dark mode */
+    --color-secondary-light: 220 10% 82%;
+    --color-secondary-dark: 220 15% 55%;
 
     /* Text colors - high contrast for readability */
     --color-text-primary: 0 0% 95%;    /* Near white, optimal contrast */

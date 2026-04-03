@@ -1,426 +1,314 @@
-<%# SengClaw 大胜龙虾 官网首页 %>
+<%# SengClaw 大胜龙虾 官网首页 — Dark Grid 全站统一风格 %>
 
-<!-- Navigation -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur border-b border-border">
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-    <div class="flex items-center gap-3">
-      <%= image_tag "sengclaw-logo.png", class: "w-8 h-8 object-contain", alt: "大胜龙虾" %>
-      <span class="text-xl font-bold text-primary">大胜龙虾</span>
-      <span class="text-xs text-muted font-medium hidden sm:block">SengClaw</span>
+<!-- ===== GLOBAL DARK WRAPPER ===== -->
+<div style="background-color: #0a0a0a; min-height: 100vh;">
+
+<!-- ===== NAVBAR ===== -->
+<nav class="fixed top-0 left-0 right-0 z-50 border-b" style="background-color: rgba(10,10,10,0.92); border-color: rgba(245,158,11,0.12); backdrop-filter: blur(12px);">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+    <div class="flex items-center gap-2">
+      <%= image_tag "sengclaw-logo.png", class: "w-9 h-9 object-contain", alt: "大胜龙虾" %>
+      <span class="text-lg font-bold" style="color: #f5f5f5;">大胜龙虾</span>
+      <span class="text-xs font-mono ml-1" style="color: rgba(245,158,11,0.6);">SengClaw</span>
     </div>
     <div class="hidden md:flex items-center gap-8">
-      <a href="#features" class="text-sm font-medium text-secondary hover:text-primary transition-colors">功能特性</a>
-      <a href="#how-it-works" class="text-sm font-medium text-secondary hover:text-primary transition-colors">工作原理</a>
-      <a href="#pricing" class="text-sm font-medium text-secondary hover:text-primary transition-colors">定价方案</a>
-      <a href="#about" class="text-sm font-medium text-secondary hover:text-primary transition-colors">关于我们</a>
+      <a href="#features" class="text-sm transition-colors" style="color: rgba(255,255,255,0.55);" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">功能特性</a>
+      <a href="#how-it-works" class="text-sm transition-colors" style="color: rgba(255,255,255,0.55);" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">使用步骤</a>
+      <a href="#about" class="text-sm transition-colors" style="color: rgba(255,255,255,0.55);" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">关于大胜</a>
+      <a href="#contact" class="text-sm transition-colors" style="color: rgba(255,255,255,0.55);" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">联系我们</a>
     </div>
-    <div class="flex items-center gap-3">
-      <a href="#contact" class="btn-primary btn-sm">联系我们</a>
-    </div>
+    <a href="#contact" class="text-sm font-semibold px-5 py-2 transition-all" style="background-color: #F59E0B; color: #0a0a0a;">加入交流群</a>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="pt-32 pb-24 px-6 relative overflow-hidden">
-  <div class="absolute inset-0 -z-10" style="background: radial-gradient(ellipse 80% 60% at 50% -10%, hsl(210 90% 45% / 0.12), transparent 70%)"></div>
-  <div class="max-w-5xl mx-auto text-center">
-    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface-elevated text-sm text-secondary mb-8">
-      <%= lucide_icon "zap", class: "w-4 h-4 text-primary" %>
-      <span>AI 时代的研发新范式 · 一人公司的超级武器</span>
+<!-- ===== HERO ===== -->
+<section class="relative pt-40 pb-28 px-6" style="background-image: linear-gradient(rgba(245,158,11,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,0.07) 1px, transparent 1px); background-size: 48px 48px;">
+  <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(245,158,11,0.06) 0%, transparent 70%);"></div>
+  <div class="max-w-4xl mx-auto text-center relative">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-xs font-mono" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25); color: #F59E0B;">
+      <%= lucide_icon "zap", class: "w-3 h-3" %>
+      AI Skill 工具 · 独立开发者出品
     </div>
-    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-      <span class="text-foreground">属于你的 </span><span class="text-primary">AI 研发团队</span>
+    <h1 class="font-extrabold leading-tight mb-6" style="font-size: clamp(2.8rem, 6vw, 4.2rem); color: #f5f5f5;">
+      让每一位创作者拥有<br><span style="color: #F59E0B;">7×24 AI 助手</span>
     </h1>
-    <p class="text-xl text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
-      随时在线，自主运转，<br>
-      像有一支研发团队在背后支撑你。
+    <p class="text-lg max-w-xl mx-auto mb-12 leading-relaxed" style="color: rgba(255,255,255,0.5);">
+      精选真实业务场景打磨的 AI Skill，开箱即用。<br>也教你怎么做——未来一起共建 Skill 生态。
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#contact" class="btn-primary btn-lg">
-        <%= lucide_icon "message-circle", class: "w-5 h-5" %>
-        扫码咨询
+      <a href="#contact" class="inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 text-sm transition-all" style="background-color: #F59E0B; color: #0a0a0a;">
+        <%= lucide_icon "message-circle", class: "w-4 h-4" %>
+        加入交流群
       </a>
-      <a href="#how-it-works" class="btn-outline btn-lg">
-        <%= lucide_icon "play-circle", class: "w-5 h-5" %>
-        了解工作原理
+      <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 text-sm transition-all" style="border: 1px solid rgba(245,158,11,0.4); color: rgba(255,255,255,0.8);" onmouseover="this.style.borderColor='rgba(245,158,11,0.8)';this.style.color='#F59E0B'" onmouseout="this.style.borderColor='rgba(245,158,11,0.4)';this.style.color='rgba(255,255,255,0.8)'">
+        查看使用步骤
       </a>
     </div>
-    <p class="text-sm text-muted mt-6">已有 <strong class="text-foreground">创业者和传统企业</strong> 正在用 AI 重建研发体系</p>
-  </div>
-
-  <!-- Hero Visual -->
-  <div class="max-w-4xl mx-auto mt-16">
-    <div class="card-elevated rounded-2xl overflow-hidden shadow-xl border border-border">
-      <div class="flex items-center gap-2 px-4 py-3 border-b border-border bg-surface-elevated">
-        <div class="w-3 h-3 rounded-full bg-danger"></div>
-        <div class="w-3 h-3 rounded-full bg-warning"></div>
-        <div class="w-3 h-3 rounded-full bg-success"></div>
-        <span class="text-xs text-muted ml-2 font-mono">sengclaw ~ AI 工作台</span>
-      </div>
-      <div class="p-6 font-mono text-sm bg-surface space-y-3">
-        <div class="flex gap-3">
-          <span class="text-muted text-xs shrink-0 pt-0.5">// 传统软件时代</span>
-        </div>
-        <div class="flex gap-3">
-          <span class="text-muted line-through text-xs">软件 → 设计给人操作 → 人看界面 → 人点按钮 → 人输入数据</span>
-        </div>
-        <div class="flex gap-3 mt-4">
-          <span class="text-primary text-xs shrink-0 pt-0.5">// 新一代软件时代</span>
-        </div>
-        <div class="flex gap-3">
-          <span class="text-foreground font-bold shrink-0 flex items-center gap-1"><%= image_tag "sengclaw-logo.png", class: "w-4 h-4 object-contain inline" %> AI:</span>
-          <span class="text-foreground">我需要查询今天的销售数据并生成报告</span>
-        </div>
-        <div class="flex gap-3 pl-12">
-          <span class="text-success text-xs">✓ 调用数据 API → 分析汇总 → 自动生成报告</span>
-        </div>
-        <div class="flex gap-3">
-          <span class="text-secondary font-bold shrink-0 flex items-center gap-1"><%= image_tag "sengclaw-logo.png", class: "w-4 h-4 object-contain inline" %> AI:</span>
-          <span class="text-secondary">发现库存异常，已自动触发补货流程 ✅</span>
-        </div>
-        <div class="flex gap-3 mt-2">
-          <span class="text-muted text-xs">→ 没有人工干预，没有界面点击，软件面向 AI 运行</span>
-        </div>
+    <div class="mt-16 flex justify-center">
+      <div class="flex flex-col items-center gap-2" style="opacity: 0.35;">
+        <span class="text-xs" style="color: rgba(255,255,255,0.5);">向下滚动</span>
+        <%= lucide_icon "chevron-down", class: "w-4 h-4 animate-bounce", style: "color: rgba(255,255,255,0.5)" %>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Social Proof -->
-<section class="py-12 border-y border-border bg-surface-elevated">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <p class="text-sm text-muted mb-8 uppercase tracking-widest">正在转型的人群</p>
-    <div class="flex flex-wrap justify-center gap-8 text-secondary">
-      <span class="flex items-center gap-2 text-sm font-medium">
-        <%= lucide_icon "user", class: "w-4 h-4 text-primary" %> 想用 AI 开公司的个人
-      </span>
-      <span class="flex items-center gap-2 text-sm font-medium">
-        <%= lucide_icon "briefcase", class: "w-4 h-4 text-primary" %> 创业者 / 一人公司
-      </span>
-      <span class="flex items-center gap-2 text-sm font-medium">
-        <%= lucide_icon "users", class: "w-4 h-4 text-primary" %> 企业研发团队
-      </span>
-      <span class="flex items-center gap-2 text-sm font-medium">
-        <%= lucide_icon "building", class: "w-4 h-4 text-primary" %> 传统软件公司
-      </span>
-      <span class="flex items-center gap-2 text-sm font-medium">
-        <%= lucide_icon "zap", class: "w-4 h-4 text-primary" %> 想弯道超车的团队
-      </span>
-    </div>
-  </div>
-</section>
-
-<!-- Features Section -->
-<section id="features" class="py-24 px-6">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-foreground mb-4">大胜龙虾帮你做什么？</h2>
-      <p class="text-lg text-secondary max-w-2xl mx-auto">不是又一个 AI 写代码工具——而是帮你率先完成软件范式转型的基建平台</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <!-- Feature 1 -->
-      <div class="card p-6 hover:shadow-md transition-shadow">
-        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-          <%= lucide_icon "cpu", class: "w-6 h-6 text-primary" %>
-        </div>
-        <h3 class="text-lg font-semibold text-foreground mb-2">面向 AI 的软件基建</h3>
-        <p class="text-secondary text-sm leading-relaxed">帮你把现有业务流程改造成 AI 可直接调用的结构——不是加个聊天框，而是让 AI 真正成为你系统的驱动者。</p>
-      </div>
-
-      <!-- Feature 2 -->
-      <div class="card p-6 hover:shadow-md transition-shadow">
-        <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
-          <%= lucide_icon "git-branch", class: "w-6 h-6 text-secondary" %>
-        </div>
-        <h3 class="text-lg font-semibold text-foreground mb-2">AI 协同开发体系</h3>
-        <p class="text-secondary text-sm leading-relaxed">不只是工具，而是一套方法论 + 交付体系。帮你的团队从"人写代码"进化到"人 + AI 协同"的新开发模式。</p>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="card p-6 hover:shadow-md transition-shadow">
-        <div class="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center mb-4">
-          <%= lucide_icon "user-check", class: "w-6 h-6 text-success" %>
-        </div>
-        <h3 class="text-lg font-semibold text-foreground mb-2">一人公司的超级武器</h3>
-        <p class="text-secondary text-sm leading-relaxed">一个人，借助 AI 驱动的新型软件体系，能做以前一个团队才能做的事。这才是 AI 时代真正的个人杠杆。</p>
-      </div>
-
-      <!-- Feature 4 -->
-      <div class="card p-6 hover:shadow-md transition-shadow">
-        <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center mb-4">
-          <%= lucide_icon "layers", class: "w-6 h-6 text-info" %>
-        </div>
-        <h3 class="text-lg font-semibold text-foreground mb-2">技能包 = AI 时代的应用</h3>
-        <p class="text-secondary text-sm leading-relaxed">传统软件面向人设计界面；技能包面向 AI 设计协议。我们帮你构建和部署下一代形态的软件产品。</p>
-      </div>
-
-      <!-- Feature 5 -->
-      <div class="card p-6 hover:shadow-md transition-shadow">
-        <div class="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center mb-4">
-          <%= lucide_icon "clock", class: "w-6 h-6 text-warning" %>
-        </div>
-        <h3 class="text-lg font-semibold text-foreground mb-2">自主运行 · 无需人工干预</h3>
-        <p class="text-secondary text-sm leading-relaxed">AI 自动完成数据分析、流程触发、报告生成。软件不再等人操作，而是主动驱动业务运转。</p>
-      </div>
-
-      <!-- Feature 6 -->
-      <div class="card p-6 hover:shadow-md transition-shadow">
-        <div class="w-12 h-12 rounded-xl bg-danger/10 flex items-center justify-center mb-4">
-          <%= lucide_icon "shield-check", class: "w-6 h-6 text-danger" %>
-        </div>
-        <h3 class="text-lg font-semibold text-foreground mb-2">本地部署 · 数据主权在你</h3>
-        <p class="text-secondary text-sm leading-relaxed">整套体系跑在你本地或私有服务器，数据不出境，企业级安全标准，适合对数据敏感的团队和企业。</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- How it works -->
-<section id="how-it-works" class="py-24 px-6 bg-surface-elevated">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-foreground mb-4">转型三步走</h2>
-      <p class="text-secondary text-lg">从传统软件思维，到面向 AI 的新范式</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="text-center">
-        <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-4 text-2xl font-black shadow-md" style="color: hsl(0 0% 100%)">1</div>
-        <h3 class="text-lg font-semibold text-foreground mb-2">诊断现有业务</h3>
-        <p class="text-secondary text-sm">梳理你当前的业务流程和系统，找出哪些环节可以被 AI 直接接管、替代人工操作。</p>
-      </div>
-      <div class="text-center">
-        <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-4 text-2xl font-black shadow-md" style="color: hsl(0 0% 100%)">2</div>
-        <h3 class="text-lg font-semibold text-foreground mb-2">构建 AI 原生体系</h3>
-        <p class="text-secondary text-sm">用大胜龙虾部署面向 AI 的软件基建，让 AI 能直接调用你的系统，而不是模拟人点界面。</p>
-      </div>
-      <div class="text-center">
-        <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-4 text-2xl font-black shadow-md" style="color: hsl(0 0% 100%)">3</div>
-        <h3 class="text-lg font-semibold text-foreground mb-2">AI 驱动，持续进化</h3>
-        <p class="text-secondary text-sm">系统上线后 AI 自主运转，人负责决策和方向，效率比传统团队高出数倍，成本大幅降低。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section class="py-24 px-6">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-foreground mb-4">他们已经开始转型了</h2>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card p-6">
-        <div class="flex gap-1 mb-4">
-          <% 5.times do %><%= lucide_icon "star", class: "w-4 h-4 text-secondary fill-current" %><% end %>
-        </div>
-        <p class="text-secondary text-sm leading-relaxed mb-4">"以前我以为 AI 只是个写代码助手，大胜龙虾让我意识到整个软件体系都要重建——我们现在是面向 AI 在开发。"</p>
-        <div class="flex items-center gap-3">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover" alt="用户">
-          <div>
-            <p class="text-sm font-semibold text-foreground">王总</p>
-            <p class="text-xs text-muted">软件公司 CEO</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card p-6">
-        <div class="flex gap-1 mb-4">
-          <% 5.times do %><%= lucide_icon "star", class: "w-4 h-4 text-secondary fill-current" %><% end %>
-        </div>
-        <p class="text-secondary text-sm leading-relaxed mb-4">"一个人，靠大胜龙虾，我做到了以前三人团队才能交付的事情。AI 时代，一人公司真的可以很强。"</p>
-        <div class="flex items-center gap-3">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover" alt="用户">
-          <div>
-            <p class="text-sm font-semibold text-foreground">李总</p>
-            <p class="text-xs text-muted">独立创业者</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card p-6">
-        <div class="flex gap-1 mb-4">
-          <% 5.times do %><%= lucide_icon "star", class: "w-4 h-4 text-secondary fill-current" %><% end %>
-        </div>
-        <p class="text-secondary text-sm leading-relaxed mb-4">"Cursor 解决的是写代码的问题，大胜龙虾解决的是整个研发团队怎么跟 AI 协同的问题，层次完全不一样。"</p>
-        <div class="flex items-center gap-3">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover" alt="用户">
-          <div>
-            <p class="text-sm font-semibold text-foreground">张工</p>
-            <p class="text-xs text-muted">研发团队负责人</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing -->
-<section id="pricing" class="py-24 px-6 bg-surface-elevated">
+<!-- ===== FEATURES ===== -->
+<section id="features" class="py-20 px-6 border-t" style="border-color: rgba(245,158,11,0.08);">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-14">
-      <h2 class="text-4xl font-bold text-foreground mb-4">定价</h2>
-      <p class="text-secondary text-lg max-w-xl mx-auto">如果你在考虑成本，可以先不考虑大胜龙虾。<br>我们只服务想认真用 AI 的人。</p>
+      <p class="text-xs font-mono mb-3" style="color: #F59E0B; letter-spacing: 0.1em;">WHY SENGCLAW</p>
+      <h2 class="text-3xl font-bold mb-3" style="color: #f5f5f5;">3 点选择大胜龙虾的理由</h2>
+      <p style="color: rgba(255,255,255,0.45); font-size: 0.95rem;">真实场景打磨，拿来就用</p>
     </div>
-
-    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-
-      <!-- OPC / 小团队 -->
-      <div class="card p-8 border-2 border-primary relative">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-          <span class="badge-primary text-xs px-3 py-1">一人公司 · 小团队</span>
+    <div class="grid md:grid-cols-3 gap-px" style="background-color: rgba(245,158,11,0.08);">
+      <div class="p-8" style="background-color: #0f0f0f;">
+        <div class="w-10 h-10 flex items-center justify-center mb-5" style="background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.2);">
+          <%= lucide_icon "package", class: "w-5 h-5", style: "color: #F59E0B;" %>
         </div>
-        <h3 class="text-xl font-bold text-foreground mb-1 mt-2">按席位订阅</h3>
-        <p class="text-sm text-muted mb-6">适合创业者、独立开发者、小型团队</p>
-        <div class="flex items-end gap-1 mb-1">
-          <span class="text-5xl font-extrabold text-foreground">¥2,999</span>
-          <span class="text-base text-muted mb-2">/席位/年</span>
-        </div>
-        <p class="text-xs text-muted mb-8">不到一位兼职员工两天的成本，却能替你干一个团队的活</p>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            AI 工作台 · 随时在线自主运转
-          </li>
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            飞书 / 企微 接入
-          </li>
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            长期记忆 + 定时任务
-          </li>
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            自定义技能包（Skill）
-          </li>
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            线上课程 + 定期答疑
-          </li>
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            席位可按需叠加
-          </li>
-        </ul>
-        <a href="#contact" class="btn-primary w-full text-center">扫码咨询 · 开始部署</a>
+        <h3 class="text-base font-bold mb-2" style="color: #f5f5f5;">节省 90% 的时间</h3>
+        <p class="text-xs font-medium mb-3" style="color: rgba(245,158,11,0.7);">省下一个助理的成本</p>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.45);">写文章、做选题、整理纪要、审合同——过去需要反复调 AI 的活，Skill 全包。大胜亲自打磨，开箱即用。</p>
       </div>
-
-      <!-- 传统企业 -->
-      <div class="card p-8">
-        <h3 class="text-xl font-bold text-foreground mb-1 mt-2">企业定制部署</h3>
-        <p class="text-sm text-muted mb-6">适合传统企业、有私有化需求的团队</p>
-        <div class="flex items-end gap-1 mb-1">
-          <span class="text-3xl font-extrabold text-foreground">定制报价</span>
+      <div class="p-8" style="background-color: #0f0f0f;">
+        <div class="w-10 h-10 flex items-center justify-center mb-5" style="background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.2);">
+          <%= lucide_icon "trending-up", class: "w-5 h-5", style: "color: #F59E0B;" %>
         </div>
-        <p class="text-xs text-muted mb-8">首次部署费 + 年度软件服务费，根据规模和需求定制</p>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            业务流程深度诊断
-          </li>
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            私有化部署 · 数据不出企业
-          </li>
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            与现有系统集成（ERP/CRM…）
-          </li>
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            专属技能包定制开发
-          </li>
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            专属技术顾问长期跟进
-          </li>
-          <li class="flex items-center gap-2 text-sm text-secondary">
-            <%= lucide_icon "check", class: "w-4 h-4 text-success shrink-0" %>
-            年度软件维护 · 持续迭代
-          </li>
-        </ul>
-        <a href="#contact" class="btn-outline w-full text-center">联系洽谈 · 获取方案</a>
+        <h3 class="text-base font-bold mb-2" style="color: #f5f5f5;">越用越懂你</h3>
+        <p class="text-xs font-medium mb-3" style="color: rgba(245,158,11,0.7);">长期记忆积累沉淀</p>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.45);">和 AI 聊的内容本地沉淀，不从零开始。偏好、风格、经验库，随使用不断积累，变成你的专属知识库。</p>
       </div>
-
+      <div class="p-8" style="background-color: #0f0f0f;">
+        <div class="w-10 h-10 flex items-center justify-center mb-5" style="background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.2);">
+          <%= lucide_icon "message-square", class: "w-5 h-5", style: "color: #F59E0B;" %>
+        </div>
+        <h3 class="text-base font-bold mb-2" style="color: #f5f5f5;">飞书 / 企微直接用</h3>
+        <p class="text-xs font-medium mb-3" style="color: rgba(245,158,11,0.7);">不用切换软件</p>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.45);">在飞书或企微发一条消息就能调用 Skill，或设置定时自动运转。你的工具，住在你的工作平台里。</p>
+      </div>
     </div>
-
-    <!-- 底部说明 -->
-    <p class="text-center text-sm text-muted mt-10">
-      不确定适合哪种？先扫码聊聊，我们帮你判断。
-    </p>
-
   </div>
 </section>
 
-<!-- CTA / Contact -->
-<section id="contact" class="py-24 px-6">
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how-it-works" class="py-20 px-6 border-t" style="background-color: #080808; border-color: rgba(245,158,11,0.08);">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="text-xs font-mono mb-3" style="color: #F59E0B; letter-spacing: 0.1em;">HOW IT WORKS</p>
+      <h2 class="text-3xl font-bold mb-3" style="color: #f5f5f5;">三步用上你的第一个 Skill</h2>
+      <p style="color: rgba(255,255,255,0.45); font-size: 0.95rem;">不用配置，不用写提示词，拿来直接用</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="flex flex-col items-center text-center">
+        <div class="w-12 h-12 flex items-center justify-center mb-5 text-lg font-bold" style="background-color: #F59E0B; color: #0a0a0a;">1</div>
+        <h3 class="text-base font-bold mb-2" style="color: #f5f5f5;">浏览精选 Skill 合集</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.45);">大胜从真实业务场景打磨的 Skill——写文章、做选题、整理纪要、审合同。找到你需要的，直接用。</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="w-12 h-12 flex items-center justify-center mb-5 text-lg font-bold" style="background-color: #F59E0B; color: #0a0a0a;">2</div>
+        <h3 class="text-base font-bold mb-2" style="color: #f5f5f5;">一句话触发，自动执行</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.45);">在飞书 / 企微发一条消息就能调用，或设置定时自动运转。越用越顺手，越用越懂你。</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="w-12 h-12 flex items-center justify-center mb-5 text-lg font-bold" style="background-color: #F59E0B; color: #0a0a0a;">3</div>
+        <h3 class="text-base font-bold mb-2" style="color: #f5f5f5;">学会了，做自己的 Skill</h3>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.45);">小红书和知识星球教你怎么把自己的业务沉淀成 Skill。学会后，你也能做出只属于你的 AI 工作流。</p>
+      </div>
+    </div>
+
+    <!-- 路线图 -->
+    <div class="mt-14 p-8 border" style="border-color: rgba(245,158,11,0.15); background-color: #0f0f0f;">
+      <p class="text-xs font-mono text-center mb-2" style="color: #F59E0B; letter-spacing: 0.1em;">ROADMAP</p>
+      <h3 class="text-xl font-bold text-center mb-8" style="color: #f5f5f5;">大胜龙虾正在成长</h3>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="flex flex-col items-center gap-3">
+          <div class="w-10 h-10 flex items-center justify-center" style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
+            <%= lucide_icon "check", class: "w-5 h-5", style: "color: #22c55e;" %>
+          </div>
+          <p class="font-semibold text-sm" style="color: #f5f5f5;">精选 Skill 上架</p>
+          <p class="text-xs text-center" style="color: rgba(255,255,255,0.35);">大胜亲自打磨，开箱即用</p>
+          <span class="text-xs px-3 py-1 font-mono" style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); color: #22c55e;">已上线</span>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="w-10 h-10 flex items-center justify-center" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2);">
+            <%= lucide_icon "book-open", class: "w-5 h-5", style: "color: #F59E0B;" %>
+          </div>
+          <p class="font-semibold text-sm" style="color: #f5f5f5;">Skill 制作课程</p>
+          <p class="text-xs text-center" style="color: rgba(255,255,255,0.35);">小红书演示 + 知识星球教学</p>
+          <span class="text-xs px-3 py-1 font-mono" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); color: #F59E0B;">进行中</span>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="w-10 h-10 flex items-center justify-center" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);">
+            <%= lucide_icon "store", class: "w-5 h-5", style: "color: rgba(255,255,255,0.3);" %>
+          </div>
+          <p class="font-semibold text-sm" style="color: #f5f5f5;">Skill 共创市场</p>
+          <p class="text-xs text-center" style="color: rgba(255,255,255,0.35);">用户发布自己的 Skill，一起共建</p>
+          <span class="text-xs px-3 py-1 font-mono" style="border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.3);">即将上线</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" class="py-20 px-6 border-t" style="border-color: rgba(245,158,11,0.08);">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="text-xs font-mono mb-3" style="color: #F59E0B; letter-spacing: 0.1em;">TESTIMONIALS</p>
+      <h2 class="text-3xl font-bold mb-3" style="color: #f5f5f5;">他们的 Skill 已经在跑了</h2>
+      <p style="color: rgba(255,255,255,0.45); font-size: 0.95rem;">真实使用场景，不是编的</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-px" style="background-color: rgba(245,158,11,0.08);">
+      <div class="p-6" style="background-color: #0f0f0f;">
+        <div class="flex gap-1 mb-4">
+          <% 5.times do %><%= lucide_icon "star", class: "w-3.5 h-3.5 fill-current", style: "color: #F59E0B;" %><% end %>
+        </div>
+        <p class="text-sm leading-relaxed mb-5" style="color: rgba(255,255,255,0.55);">"我做小红书，以前想一个标题要想半天。现在 Skill 帮我，一句话出 27 个标题，每次都很对味。"</p>
+        <div class="flex items-center gap-3 pt-4 border-t" style="border-color: rgba(255,255,255,0.08);">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop&crop=face" class="w-8 h-8 object-cover" alt="小林">
+          <div>
+            <p class="text-sm font-semibold" style="color: #f5f5f5;">小林</p>
+            <p class="text-xs" style="color: rgba(255,255,255,0.35);">小红书内容创作者</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6" style="background-color: #0f0f0f;">
+        <div class="flex gap-1 mb-4">
+          <% 5.times do %><%= lucide_icon "star", class: "w-3.5 h-3.5 fill-current", style: "color: #F59E0B;" %><% end %>
+        </div>
+        <p class="text-sm leading-relaxed mb-5" style="color: rgba(255,255,255,0.55);">"每天早上 8 点，行业晨报 Skill 自动跑完发到飞书，我到公司直接看。比自己整理快了 10 倍。"</p>
+        <div class="flex items-center gap-3 pt-4 border-t" style="border-color: rgba(255,255,255,0.08);">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" class="w-8 h-8 object-cover" alt="阿杰">
+          <div>
+            <p class="text-sm font-semibold" style="color: #f5f5f5;">阿杰</p>
+            <p class="text-xs" style="color: rgba(255,255,255,0.35);">互联网运营</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6" style="background-color: #0f0f0f;">
+        <div class="flex gap-1 mb-4">
+          <% 5.times do %><%= lucide_icon "star", class: "w-3.5 h-3.5 fill-current", style: "color: #F59E0B;" %><% end %>
+        </div>
+        <p class="text-sm leading-relaxed mb-5" style="color: rgba(255,255,255,0.55);">"我一个人接了以前三人才能跑的项目。合同审查 Skill 帮我省了大量时间，客户都说我响应很快。"</p>
+        <div class="flex items-center gap-3 pt-4 border-t" style="border-color: rgba(255,255,255,0.08);">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" class="w-8 h-8 object-cover" alt="老陈">
+          <div>
+            <p class="text-sm font-semibold" style="color: #f5f5f5;">老陈</p>
+            <p class="text-xs" style="color: rgba(255,255,255,0.35);">独立创业者 · 一人公司</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="py-20 px-6 border-t" style="background-color: #080808; border-color: rgba(245,158,11,0.08);">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="flex flex-col items-center md:items-start gap-6">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" class="w-28 h-28 object-cover" style="border: 1px solid rgba(245,158,11,0.2);" alt="大胜">
+        <div>
+          <p class="text-xl font-bold mb-1" style="color: #f5f5f5;">大胜 · 张润胜</p>
+          <p class="text-sm mb-4" style="color: rgba(255,255,255,0.4);">独立开发者 · AI 工具探索者 · 广东</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-3 py-1 font-mono" style="border: 1px solid rgba(245,158,11,0.2); color: rgba(245,158,11,0.7);">小红书创作者</span>
+            <span class="text-xs px-3 py-1 font-mono" style="border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.35);">一人公司</span>
+            <span class="text-xs px-3 py-1 font-mono" style="border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.35);">AR 眼镜用户</span>
+            <span class="text-xs px-3 py-1 font-mono" style="border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.35);">龙虾爱好者</span>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-5">
+        <p class="text-xs font-mono mb-2" style="color: #F59E0B; letter-spacing: 0.1em;">ABOUT</p>
+        <h2 class="text-3xl font-bold" style="color: #f5f5f5;">为什么做大胜龙虾？</h2>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.45);">
+          我是前端开发者出身。AI 时代来了以后，我开始焦虑——写代码这件事，AI 越来越能代替。于是我开始探索：<strong style="color: rgba(255,255,255,0.8);">怎么用 AI 重建自己的工作方式？</strong>
+        </p>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.45);">
+          我把自己每个真实的业务场景——写文章、做选题、审合同、整理纪要——一个一个沉淀成 Skill。用着用着发现，<strong style="color: rgba(255,255,255,0.8);">这些工具比雇人还好使。</strong>
+        </p>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.45);">
+          大胜龙虾就是这些 Skill 的家。我先把自己的上架，再在小红书和知识星球教你怎么做。<strong style="color: rgba(255,255,255,0.8);">最终，你做的 Skill 也可以上架，我们一起把这个工具库越建越大。</strong>
+        </p>
+        <div class="flex items-center gap-4 pt-2">
+          <a href="https://www.xiaohongshu.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm transition-colors" style="color: #F59E0B;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+            <%= lucide_icon "external-link", class: "w-4 h-4" %>
+            小红书 @大胜
+          </a>
+          <a href="#contact" class="flex items-center gap-2 text-sm transition-colors" style="color: rgba(255,255,255,0.4);" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
+            <%= lucide_icon "message-circle", class: "w-4 h-4" %>
+            加我微信
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA / CONTACT ===== -->
+<section id="contact" class="py-20 px-6 border-t" style="border-color: rgba(245,158,11,0.08);">
   <div class="max-w-3xl mx-auto text-center">
-    <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-      <%= image_tag "sengclaw-logo.png", class: "w-14 h-14 object-contain", alt: "大胜龙虾" %>
-    </div>
-    <h2 class="text-4xl font-bold text-foreground mb-4">准备好开始了？</h2>
-    <p class="text-lg text-secondary mb-3">扫码加我微信，我们直接聊</p>
-    <p class="text-sm text-muted mb-10">无论你是一人公司还是传统企业，先聊需求，再谈方案</p>
-
+    <p class="text-xs font-mono mb-3" style="color: #F59E0B; letter-spacing: 0.1em;">JOIN US</p>
+    <h2 class="text-3xl font-bold mb-4" style="color: #f5f5f5;">加入大胜龙虾交流群</h2>
+    <p class="mb-10" style="color: rgba(255,255,255,0.45); font-size: 0.95rem;">扫码加我微信，一起探索 AI Skill · 分享工作流场景 · 互相学习</p>
     <div class="flex flex-col items-center gap-6">
-      <!-- QR Code -->
-      <div class="rounded-xl overflow-hidden">
-        <%= image_tag "contact-qrcode.png", class: "w-80 h-auto block", alt: "微信扫码联系" %>
+      <div class="overflow-hidden" style="border: 1px solid rgba(245,158,11,0.2);">
+        <%= image_tag "contact-qrcode.png", class: "w-72 h-auto block", alt: "微信扫码联系" %>
       </div>
-
-      <!-- Tips -->
-      <div class="grid sm:grid-cols-3 gap-4 w-full max-w-xl text-sm">
-        <div class="card p-4 text-center">
-          <%= lucide_icon "message-circle", class: "w-5 h-5 text-primary mx-auto mb-1" %>
-          <p class="text-foreground font-medium">免费咨询</p>
-          <p class="text-muted text-xs mt-1">先聊需求再说方案</p>
+      <div class="grid sm:grid-cols-3 gap-px w-full max-w-xl" style="background-color: rgba(245,158,11,0.08);">
+        <div class="p-5 text-center" style="background-color: #0f0f0f;">
+          <%= lucide_icon "zap", class: "w-5 h-5 mx-auto mb-2", style: "color: #F59E0B;" %>
+          <p class="font-semibold text-sm mb-1" style="color: #f5f5f5;">分享 Skill</p>
+          <p class="text-xs" style="color: rgba(255,255,255,0.35);">交流你的工作流实践</p>
         </div>
-        <div class="card p-4 text-center">
-          <%= lucide_icon "clock", class: "w-5 h-5 text-primary mx-auto mb-1" %>
-          <p class="text-foreground font-medium">快速响应</p>
-          <p class="text-muted text-xs mt-1">工作时间内实时回复</p>
+        <div class="p-5 text-center" style="background-color: #0f0f0f;">
+          <%= lucide_icon "users", class: "w-5 h-5 mx-auto mb-2", style: "color: #F59E0B;" %>
+          <p class="font-semibold text-sm mb-1" style="color: #f5f5f5;">一起探索</p>
+          <p class="text-xs" style="color: rgba(255,255,255,0.35);">AI 工具爱好者的圈子</p>
         </div>
-        <div class="card p-4 text-center">
-          <%= lucide_icon "shield-check", class: "w-5 h-5 text-primary mx-auto mb-1" %>
-          <p class="text-foreground font-medium">无销售骚扰</p>
-          <p class="text-muted text-xs mt-1">不合适不强推</p>
+        <div class="p-5 text-center" style="background-color: #0f0f0f;">
+          <%= lucide_icon "lightbulb", class: "w-5 h-5 mx-auto mb-2", style: "color: #F59E0B;" %>
+          <p class="font-semibold text-sm mb-1" style="color: #f5f5f5;">学习交流</p>
+          <p class="text-xs" style="color: rgba(255,255,255,0.35);">把经验变成可复用工具</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="border-t border-border py-12 px-6 bg-surface-elevated">
+<!-- ===== FOOTER ===== -->
+<footer class="py-12 px-6 border-t" style="background-color: #080808; border-color: rgba(245,158,11,0.08);">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-4 gap-8 mb-8">
       <div class="md:col-span-2">
         <div class="flex items-center gap-2 mb-3">
           <%= image_tag "sengclaw-logo.png", class: "w-8 h-8 object-contain", alt: "大胜龙虾" %>
-          <span class="text-lg font-bold text-foreground">大胜龙虾 · SengClaw</span>
+          <span class="text-base font-bold" style="color: #f5f5f5;">大胜龙虾 · SengClaw</span>
         </div>
-        <p class="text-sm text-muted leading-relaxed max-w-xs">面向 AI 的新一代软件基建平台。帮助个人、创业者和企业团队率先完成软件开发范式的转型，抢占 AI 时代的生态位。</p>
-        <p class="text-xs text-muted mt-4">© 2026 SengClaw · sengclaw.com</p>
+        <p class="text-sm leading-relaxed max-w-xs" style="color: rgba(255,255,255,0.35);">AI 编程工具探索与实践。分享 AI Skill 制作方法、工作流自动化技巧，帮助开发者和技术爱好者把经验变成可复用的工具。</p>
+        <p class="text-xs mt-4" style="color: rgba(255,255,255,0.25);">© 2026 SengClaw · sengclaw.com</p>
+        <p class="text-xs mt-1">
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="transition-colors" style="color: rgba(255,255,255,0.25);" onmouseover="this.style.color='rgba(255,255,255,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">粤ICP备2026000199号-2</a>
+        </p>
       </div>
       <div>
-        <h4 class="text-sm font-semibold text-foreground mb-3">产品</h4>
-        <ul class="space-y-2 text-sm text-muted">
-          <li><a href="#features" class="hover:text-foreground transition-colors">功能特性</a></li>
-          <li><a href="#how-it-works" class="hover:text-foreground transition-colors">工作原理</a></li>
-          <li><a href="#pricing" class="hover:text-foreground transition-colors">定价方案</a></li>
+        <h4 class="text-xs font-mono mb-4" style="color: rgba(245,158,11,0.6); letter-spacing: 0.1em;">PRODUCT</h4>
+        <ul class="space-y-2 text-sm" style="color: rgba(255,255,255,0.35);">
+          <li><a href="#features" class="transition-colors hover:text-amber-400" style="color: rgba(255,255,255,0.35);" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">功能特性</a></li>
+          <li><a href="#how-it-works" class="transition-colors" style="color: rgba(255,255,255,0.35);" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">工作原理</a></li>
+          <li><a href="#testimonials" class="transition-colors" style="color: rgba(255,255,255,0.35);" onmouseover="this.style.color='#F59E0B'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">用户反馈</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-sm font-semibold text-foreground mb-3">联系我们</h4>
-        <ul class="space-y-2 text-sm text-muted">
-          <li class="flex items-center gap-1">
-            <%= lucide_icon "globe", class: "w-3 h-3" %>
+        <h4 class="text-xs font-mono mb-4" style="color: rgba(245,158,11,0.6); letter-spacing: 0.1em;">CONTACT</h4>
+        <ul class="space-y-2 text-sm">
+          <li class="flex items-center gap-2" style="color: rgba(255,255,255,0.35);">
+            <%= lucide_icon "globe", class: "w-3.5 h-3.5" %>
             sengclaw.com
           </li>
-          <li class="flex items-center gap-1">
-            <%= lucide_icon "mail", class: "w-3 h-3" %>
+          <li class="flex items-center gap-2" style="color: rgba(255,255,255,0.35);">
+            <%= lucide_icon "mail", class: "w-3.5 h-3.5" %>
             hi@sengclaw.com
           </li>
         </ul>
@@ -428,3 +316,6 @@
     </div>
   </div>
 </footer>
+
+
+</div><!-- ===== END GLOBAL DARK WRAPPER ===== -->
