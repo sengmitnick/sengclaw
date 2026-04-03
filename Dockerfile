@@ -1,5 +1,6 @@
+# syntax=docker/dockerfile:1
 # Ruby 3.3.5 + Rails 7.2 production image
-FROM docker.m.daocloud.io/library/ruby:3.3.5-slim
+FROM ghcr.io/clacky-ai/rails-base-template:latest
 
 # System dependencies: PostgreSQL client, Node.js 20, build tools, jemalloc
 RUN apt-get update -qq && \
