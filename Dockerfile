@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 # Ruby 3.3.5 + Rails 7.2 production image
-FROM ruby:3.3.5-slim
+FROM registry.cn-hangzhou.aliyuncs.com/library/ruby:3.3.5-slim
 
 # System dependencies: PostgreSQL client, Node.js 20, build tools, jemalloc
 RUN apt-get update -qq && \
@@ -50,5 +50,5 @@ USER ruby
 
 ENTRYPOINT ["/app/bin/docker-entrypoint"]
 
-EXPOSE ${PORT}
+EXPOSE 3000
 CMD ["./bin/rails", "server"]
