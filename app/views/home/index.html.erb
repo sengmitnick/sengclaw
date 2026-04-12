@@ -38,9 +38,9 @@
         精选真实业务场景打磨的 AI Skill，开箱即用。<br>也教你怎么做——未来一起共建 Skill 生态。
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#contact" class="inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 text-sm transition-all" style="background-color: #F59E0B; color: #0a0a0a;">
-          <%= lucide_icon "message-circle", class: "w-4 h-4" %>
-          加入交流群
+        <a href="#download" class="inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 text-sm transition-all" style="background-color: #F59E0B; color: #0a0a0a;">
+          <%= lucide_icon "download", class: "w-4 h-4" %>
+          立即下载使用
         </a>
         <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 text-sm transition-all" style="border: 1px solid rgba(245,158,11,0.4); color: rgba(255,255,255,0.8);" onmouseover="this.style.borderColor='rgba(245,158,11,0.8)';this.style.color='#F59E0B'" onmouseout="this.style.borderColor='rgba(245,158,11,0.4)';this.style.color='rgba(255,255,255,0.8)'">
           查看使用步骤
@@ -53,6 +53,91 @@
     <div class="flex flex-col items-center gap-2" style="opacity: 0.35;">
       <span class="text-xs" style="color: rgba(255,255,255,0.5);">向下滚动</span>
       <%= lucide_icon "chevron-down", class: "w-4 h-4 animate-bounce", style: "color: rgba(255,255,255,0.5)" %>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOWNLOAD ===== -->
+<section id="download" class="py-20 px-6 border-t" style="background-color: #080808; border-color: rgba(245,158,11,0.08);">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="text-xs font-mono mb-3" style="color: #F59E0B; letter-spacing: 0.1em;">GET STARTED</p>
+      <h2 class="text-3xl font-bold mb-3" style="color: #f5f5f5;">两步安装，即刻拥有 AI 助手</h2>
+      <p style="color: rgba(255,255,255,0.45); font-size: 0.95rem;">下载安装器 → 粘贴命令 → 搞定</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- macOS -->
+      <div class="border p-6" style="border-color: rgba(245,158,11,0.15); background-color: #0f0f0f;">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 flex items-center justify-center" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2);">
+            <%= lucide_icon "monitor", class: "w-5 h-5", style: "color: #F59E0B;" %>
+          </div>
+          <div>
+            <p class="font-bold text-sm" style="color: #f5f5f5;">macOS</p>
+            <p class="text-xs" style="color: rgba(255,255,255,0.35);">苹果电脑 · 3~5 分钟安装完毕</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-xs font-bold" style="background-color: #F59E0B; color: #0a0a0a;">1</span>
+            <div>
+              <p class="text-sm mb-2" style="color: rgba(255,255,255,0.7);">下载安装器</p>
+              <a href="https://oss.1024code.com/openclacky-installer/openclacky-installer.dmg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 transition-all" style="background-color: rgba(245,158,11,0.15); color: #F59E0B; border: 1px solid rgba(245,158,11,0.3);">
+                <%= lucide_icon "download", class: "w-4 h-4" %>
+                下载 .dmg
+              </a>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-xs font-bold" style="background-color: #F59E0B; color: #0a0a0a;">2</span>
+            <div class="w-full">
+              <p class="text-sm mb-3" style="color: rgba(255,255,255,0.7);">粘贴命令</p>
+              <div class="flex items-center gap-2">
+                <code id="install-cmd-macos" class="flex-1 truncate text-xs px-3 py-2" style="background-color: #1a1a1a; color: #22c55e; border: 1px solid rgba(255,255,255,0.08); min-width: 0;">/bin/bash -c "$(curl -sSL https://oss.1024code.com/clacky-ai/openclacky/main/scripts/install.sh)" -- --brand-name=大胜龙虾 --command=sengclaw</code>
+                <button data-copy-btn data-target-id="install-cmd-macos" class="copy-btn flex-shrink-0 p-2 transition-all" style="background-color: rgba(245,158,11,0.15); color: #F59E0B; border: 1px solid rgba(245,158,11,0.3);">
+                  <%= lucide_icon "copy", class: "w-4 h-4" %>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Windows -->
+      <div class="border p-6" style="border-color: rgba(245,158,11,0.15); background-color: #0f0f0f;">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 flex items-center justify-center" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2);">
+            <%= lucide_icon "monitor", class: "w-5 h-5", style: "color: #F59E0B;" %>
+          </div>
+          <div>
+            <p class="font-bold text-sm" style="color: #f5f5f5;">Windows</p>
+            <p class="text-xs" style="color: rgba(255,255,255,0.35);">视网络情况，3~5 分钟安装完毕</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-xs font-bold" style="background-color: #F59E0B; color: #0a0a0a;">1</span>
+            <div>
+              <p class="text-sm mb-2" style="color: rgba(255,255,255,0.7);">下载安装器</p>
+              <a href="https://oss.1024code.com/openclacky-installer/openclacky-installer.exe" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 transition-all" style="background-color: rgba(245,158,11,0.15); color: #F59E0B; border: 1px solid rgba(245,158,11,0.3);">
+                <%= lucide_icon "download", class: "w-4 h-4" %>
+                下载 .exe
+              </a>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-xs font-bold" style="background-color: #F59E0B; color: #0a0a0a;">2</span>
+            <div class="w-full">
+              <p class="text-sm mb-3" style="color: rgba(255,255,255,0.7);">粘贴命令</p>
+              <div class="flex items-center gap-2">
+                <code id="install-cmd-windows" class="flex-1 truncate text-xs px-3 py-2" style="background-color: #1a1a1a; color: #22c55e; border: 1px solid rgba(255,255,255,0.08); min-width: 0;">powershell -c "& ([scriptblock]::Create((irm 'https://oss.1024code.com/clacky-ai/openclacky/main/scripts/install.ps1'))) -BrandName '大胜龙虾' -CommandName 'sengclaw'"</code>
+                <button data-copy-btn data-target-id="install-cmd-windows" class="copy-btn flex-shrink-0 p-2 transition-all" style="background-color: rgba(245,158,11,0.15); color: #F59E0B; border: 1px solid rgba(245,158,11,0.3);">
+                  <%= lucide_icon "copy", class: "w-4 h-4" %>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
